@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Restaurant Landing Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <style>
+      :root {
+        font-size: 62.5%;
+      }
+
+      body, #header {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        scroll-behavior: smooth;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+
+      #header {
+        font-family: "Montserrat", sans-serif;
+        background-color: #f2f2f2;
+        padding: 1rem 0;
+        position: sticky;
+        z-index: 99;
+        top: 0;
+        left: 0;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      #header img {
+        height: 5rem;
+        width: auto;
+      }
+
+      nav {
+        float: right;
+        font-size: 1.6rem;
+        font-weight: 500;
+        padding: 1.5rem 0;
+      }
+
+      .nav-link {
+        text-decoration: none;
+        color: #333;
+        margin: 0 0.5rem;
+        padding: 0 0.6rem;
+        transition: border-bottom 0.2s;
+      }
+
+      .flexible {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .home-sec {
+        font-family: "Montserrat", sans-serif;
+        background-color: #ffffff;
+        text-align: start;
+        min-height: 60rem;
+        margin: 0 auto 5rem auto;
+        max-width: 95rem;
+        color: #333;
+      }
+
+      .eye-grabber h1 {
+        font-size: 5rem;
+        font-weight: 600;
+      }
+
+      .eye-grabber h2 {
+        font-size: 2.4rem;
+        color: #666;
+      }
+
+      .eye-grabber img {
+        max-width: 100%;
+      }
+
+      .btn {
+        border: none;
+        font-size: 2rem;
+        border-radius: 0.4rem;
+        padding: 2rem;
+        background-color: #e23d3d;
+        color: #fafafa;
+        outline: 0;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+      }
+
+      .section-heading {
+        font-size: 2.5rem;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        line-height: 1.2;
+        padding: 5rem 0 5rem 0;
+        text-align: center;
+      }
+
+      .sec-content-div {
+        font-size: 2rem;
+        text-align: start;
+        padding: 0 2rem 5rem 2rem;
+        max-width: 95rem;
+        margin: 0 auto;
+      }
+
+      #about {
+        background-color: #fafafa;
+      }
+
+      #about img {
+        max-width: 100%;
+        height: auto;
+        background-color: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 6px 31px -2px rgba(0, 0, 0, 0.1);
+      }
+      #popular {
+        background-color: #e3e3e3;
+      }
+
+      .tile {
+        background-color: #fafafa;
+        height: 40rem;
+        width: 25rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        border-radius: 0.5rem;
+        transition: all 0.2s;
+        padding: 1.5rem;
+        margin: 1.5rem;
+      }
+
+      .tile img {
+        width: 100%;
+        max-width: 48rem;
+        border-radius: 0.5rem;
+      }
+
+      .tile h4 {
+        font-size: 2rem;
+        font-weight: 600;
+        padding: 1rem 0;
+        color: #e23d3d;
+        margin: 0;
+      }
+
+      .tile p {
+        font-size: 1.6rem;
+        padding: 0;
+        margin: 0;
+      }
+
+      .tile:hover {
+        transform: scale(1.05);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.19), 0 16px 16px rgba(0, 0, 0, 0.23);
+      }
+
+      #our-service {
+        background-color: #f2f2f2;
+      }
+
+      .bars {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        margin: 2rem;
+      }
+
+      .bars .icon-container {
+        max-width: 10rem;
+        flex: 1;
+      }
+
+      .icon-container img {
+        max-height: 100%;
+        max-width: 100%;
+      }
+
+      .bars .txt-container {
+        flex: 2;
+        padding: 3rem;
+      }
+
+      .txt-container h5 {
+        font-size: 4rem;
+        font-weight: 500;
+        padding: 0;
+        margin: 0;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      .txt-container p {
+        font-size: 2.3rem;
+      }
+
+      #contact {
+        background-color: #f9f9f9;
+        color: #333;
+      }
+
+      #contact h6 {
+        font-size: 3rem;
+        font-weight: 500;
+      }
+
+      input[type="email"] {
+        border: none;
+        outline: 0;
+        font-size: 2rem;
+        border-radius: 0.4rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        padding: 2rem;
+      }
+
+      footer {
+        background-color: #333;
+        font-size: 1.4rem;
+        text-align: center;
+        padding: 2rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        color: #fafafa;
+      }
+
+      footer a {
+        color: #e3e3e3;
+        text-decoration: none;
+      }
+      .slider {
+        width: 100%;
+        overflow: hidden;
+      }
+      .slider-content {
+        display: flex;
+        transition: transform 0.5s;
+      }
+      .slide {
+        flex: 0 0 100%;
+      }
+      .testimonial {
+        background: #f5f5f5;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 10px;
+        font-size: 28px;
+      }
+    </style>
+  </head>
+  <body>
+    <header id="header">
+      <div class="header-content-div">
+        <a href="#home-sec">
+          <img
+            src="https://cdn.dribbble.com/users/3453456/screenshots/9431860/media/ce40ac123547c2721feb3375052ad1ed.jpg?resize=1000x750&vertical=center"
+            alt="Company Logo"
+            id="header-img"
+        /></a>
+        <nav id="nav-bar">
+          <a href="#home" class="nav-link">HOME</a>
+          <a href="#about us" class="nav-link">ABOUT US</a>
+          <a href="#our popular food" class="nav-link">OUR POPULAR FOOD</a>
+          <a href="#our service" class="nav-link">OUR SERVICE</a>
+          <a href="#contact us" class="nav-link">CONTACT US</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section id="home-sec" class="flexible home-sec">
+        <div class="eye-grabber-img">
+          <img src="https://media.istockphoto.com/id/1158623408/photo/indian-hindu-veg-thali-food-platter-selective-focus.jpg?s=612x612&w=0&k=20&c=MOm3sfIfL22URV6juSCxpA3yfr4O63yJUV5vitufR7Y=" alt="Image of FOOD" />
+        </div>
+        <div class="eye-grabber">
+          <h1>Top Food In Your Town For You.</h1>
+          <h2>
+            Best Restaurant In Town and Best Rated Cuisines Of All Continent.
+          </h2>
+          <button class="btn" onclick="window.location.href = '#contact';">
+            Explore ->
+          </button>
+        </div>
+      </section>
+      <section id="about" class="sec-padding">
+        <h3 class="section-heading">ABOUT US</h3>
+        <div class="sec-content-div flexible">
+          <p>
+            The food served at bistro comes straight from our fields, through our kitchen and to you fork. Our chef creates a menu for every season, and all our meals are made fresh from raw ingredients. Our 40 seat restaurant is open from 10am to 11pm seven days a week.
+          </p>
+        </div>
+      </section>
+      <section id="foods" class="sec-padding">
+        <h3 class="section-heading">OUR POPULAR FOOD</h3>
+        <div class="sec-content-div flexible">
+          <div class="tile">
+            <img src="https://www.foodandwine.com/thmb/4qg95tjf0mgdHqez5OLLYc0PNT4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/classic-cheese-pizza-FT-RECIPE0422-31a2c938fc2546c9a07b7011658cfd05.jpg" alt="photo of pizzae" />
+            <h4>Cheese Pizza</h4>
+          </div>
+          <div class="tile">
+            <img src="https://sugarspicenice.in/wp-content/uploads/2020/07/81BD06CD-03EA-4677-9B1F-6AA7B1CA8A41-690x455.jpg" alt="photo of Paneer" />
+            <h4>Paneer Kaju Curry</h4>
+          </div>
+          <div class="tile">
+            <img src="https://media-cdn.tripadvisor.com/media/photo-s/18/47/bc/8d/sizzling-brownie-with.jpg" alt="photo of brownie" />
+            <h4>Brownie</h4>
+          </div>
+        </div>
+      </section>
+      <section id="our-service" class="sec-padding">
+        <h3 class="section-heading">OUR SERVICE</h3>
+        <div class="sec-content-div">
+          <div class="bars">
+            <div class="icon-container">
+              <img src="https://i.ibb.co/w6H542X/Fresh.png" alt="" />
+            </div>
+            <div class="txt-container">
+              <h5>Fresh</h5>
+              <p>We serve fresh foods with a 100% guarantee of freshness.</p>
+            </div>
+          </div>
+          <div class="bars">
+            <div class="icon-container">
+              <img src="https://i.ibb.co/FKNq4Qr/delivered.png" alt="" />
+          </div>
+            <div class="txt-container">
+              <h5>Satisfying</h5>
+              <p>
+                We guarantee 100% customer satisfaction. We do our best to make
+                your purchase experience smooth.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="sec-padding" id="contact">
+        <h3 class="section-heading">CONTACT US</h3>
+        <div class="sec-content-div flexible">
+          <h6>To make an order or just to know more contact us :</h6>
+          <form
+            id="form"
+            action="https://www.freecodecamp.com/email-submit"
+            method="POST"
+          >
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Type Email Address"
+              required
+            />
+            <input type="submit" class="btn" id="submit" value="Know More" />
+          </form>
+        </div>
+      </section>
+      <section id="testimonials" class="sec-padding">
+        <h3 class="section-heading">TESTIMONIALS</h3>
+              <div class="testimonial">
+                <p>Testimonial 1: Excellent restaurant, highly recommended!</p>
+              </div>
+      </section>
+      <section id="gallery" class="sec-padding">
+        <h3 class="section-heading">GALLERY</h3>
+        <div class="slider">
+          <div class="slider-content">
+            <div class="slide">
+              <img src="https://www.vegrecipesofindia.com/wp-content/uploads/2021/06/idli-recipe-1-280x280.jpg" alt="Image 1" />
+            </div>
+            <div class="slide">
+              <img src="https://www.liquor.com/thmb/nw2cOZ4YwJD_dk9O_KPGX1Lcqc8=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Fields-of-Travel-720x720-recipe-77ce1698da4341719ab0611caa9fd0f9.jpg" alt="Image 2" />
+            </div>
+            <div class="slide">
+              <img src="https://b.zmtcdn.com/data/pictures/2/2600072/5c614fde94afee6863f588d9c45fe111.jpg?output-format=webp&fit=around|771.75:416.25&crop=771.75:416.25;*,*" alt="Image 3" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      Created by
+      <a href="#">Lucky Singh</a>
+    </footer>
+    <script>
+      let slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        let slides = document.querySelectorAll(".slide");
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 3000);
+      }
+    </script>
+  </body>
+</html>
